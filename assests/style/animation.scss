@@ -1,0 +1,200 @@
+body{
+    overflow-x: hidden !important;
+}
+.recent-sketches-area,
+.client-feedback-area{
+    overflow-x: hidden !important;
+}
+.boxes[data-scroll],
+.recent-sketches-area.first[data-scroll],
+.recent-sketches-area.second[data-scroll],
+.c2a-heading[data-scroll],
+.query-request-section[data-scroll],
+.client-feedback-area[data-scroll],
+.client[data-scroll]{
+    transition: all 0.5s ease-in-out;
+    overflow-x: hidden !important;
+}
+
+.gallery-image[data-scroll],
+.outer-about[data-scroll],
+.artist-skills-area[data-scroll],
+.card-up[data-scroll],
+.card-down[data-scroll]{
+    transition: all 0.6s ease-in;
+}
+
+
+.artist-info[data-scroll],
+.artist-journey[data-scroll]{
+    transition: all 0.7s ease-in-out;
+    transition-delay: 0.8s;
+}
+
+.small-blocks-area[data-scroll],
+.sketches[data-scroll]{
+    transition: all 0.5s ease-in;
+    transition-delay: 0.5s;
+    overflow-x: hidden;
+}
+.boxes[data-scroll="in"]{
+    opacity: 1;
+    transform: translateX(0px);
+    overflow-x: hidden;
+    visibility: visible;
+    position: relative;
+}
+.boxes[data-scroll="out"]{
+    opacity: 0;
+    transform: translateX(0px);
+    visibility: hidden;
+    position: absolute;
+}
+
+.small-blocks-area[data-scroll="in"]{
+    opacity: 1;
+    transform: translate(00px);
+    overflow-x: hidden;
+    visibility: visible;
+    position: relative;
+}
+.small-blocks-area[data-scroll="out"]{
+    opacity: 0;
+    transform: translate(10px);
+    visibility: hidden;
+    position: absolute;
+}
+
+.recent-sketches-area.first[data-scroll="in"],
+.recent-sketches-area.second[data-scroll="in"]
+{
+    opacity: 1;
+    transform: translateY(0px);
+    overflow-x: hidden;
+    visibility: visible;
+}
+.recent-sketches-area.first[data-scroll="out"],
+.recent-sketches-area.second[data-scroll="out"]{
+    opacity: 0;
+    transform: translateY(100px);
+    visibility: hidden;
+}
+
+.sketches[data-scroll="in"],
+.client-feedback-area[data-scroll="in"]{
+    opacity: 1;
+    transform: translatex(0px);
+    visibility: visible;
+}
+.sketches[data-scroll="out"]{
+    opacity: 0;
+    transform: translatex(50px);
+    visibility: hidden;
+}
+
+.c2a-heading[data-scroll="in"]{
+    opacity: 1;
+    transform: translateX(0px);
+}
+.c2a-heading[data-scroll="out"]{
+    opacity: 0;
+    transform: translateX(15px);
+}
+
+.c2a-description[data-scroll="in"],
+.c2a-btn[data-scroll="in"]{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.c2a-description[data-scroll="out"],
+.c2a-btn[data-scroll="out"]{
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.query-request-section[data-scroll="in"]{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.query-request-section[data-scroll="out"]{
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.client-feedback-area[data-scroll="in"]{
+    opacity: 1;
+    transform: translateX(00px);
+}
+.client-feedback-area[data-scroll="out"]{
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.gallery-image[data-scroll="in"]{
+    opacity: 1;
+    transform: translateY(00px);
+}
+.gallery-image[data-scroll="out"]{
+    opacity: 0;
+    transform: translateY(100px);
+}
+.card-up[data-scroll="in"]{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.card-up[data-scroll="out"]{
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.card-down[data-scroll="in"]{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.card-down[data-scroll="out"]{
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+
+/*--------------------
+            responsiveness design
+--------------------------------------------*/
+@media(max-width: 520px){
+    [data-scroll="in"],
+    .small-blocks-area[data-scroll="in"],
+    .recent-sketches-area.first[data-scroll="in"],
+    .recent-sketches-area.second[data-scroll="in"],
+    .sketches[data-scroll="in"],
+    .client-feedback-area[data-scroll="in"],
+    .c2a-heading[data-scroll="in"],
+    .c2a-description[data-scroll="in"],
+    .c2a-btn[data-scroll="in"],
+    .query-request-section[data-scroll="in"],
+    .client-feedback-area[data-scroll="in"],
+    .gallery-image[data-scroll="in"],
+    .card-up[data-scroll="in"]
+    {
+        opacity: 1 !important;
+        transform: translateY(0px) !important;
+    }
+    [data-scroll="out"],
+    .small-blocks-area[data-scroll="out"],
+    .recent-sketches-area.first[data-scroll="out"],
+    .recent-sketches-area.second[data-scroll="out"],
+    .sketches[data-scroll="out"],
+    .c2a-heading[data-scroll="out"],
+    .c2a-description[data-scroll="out"],
+    .c2a-btn[data-scroll="out"],
+    .query-request-section[data-scroll="out"],
+    .client-feedback-area[data-scroll="out"],
+    .gallery-image[data-scroll="out"],
+    .card-up[data-scroll="out"]{
+        opacity: 0 !important;
+        transform: translateY(25px) !important; 
+    }
+    .card-down[data-scroll="out"]{
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+}

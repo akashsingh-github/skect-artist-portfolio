@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <title>Dynamic price with input field</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Choose your best suite </h2>
+        <hr>
+       
+        <div class="price-list-wrapper">
+            
+            <div class="parts">
+                <div class="select-option">
+                    <h4>select 1: </h4>
+                    <select name="select-1" id="select-1" class="select">
+                        <option value="000">Select</option>
+                        <option value="500">500</option>
+                        <option value="700">700</option>
+                        <option value="900">900</option>
+                        <option value="1000">1000</option>
+                    </select>
+                </div>
+                <div class="text-field">
+                    <div class="form-group">
+                        <label>Price 1</label>
+                        <input type="number" id="input-1" class="form-control price" disabled>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="parts">
+                <div class="select-option">
+                    <h4>selection 2: </h4>
+                    <select name="select-2" id="select-2" class="select">
+                        <option value=""></option>
+                        <option value="1100">1100</option>
+                        <option value="1200">1200</option>
+                        <option value="1300">1300</option>
+                        <option value="1400">1400</option>
+                    </select>
+                </div>
+                <div class="text-field">
+                    <div class="form-group">
+                        <label>Price 1</label>
+                        <input type="number" id="input-2" class="form-control price" disabled>
+                    </div>
+                </div>
+            </div>
+           
+            
+            <div class="parts">
+                <div class="select-option">
+                    <h4>selection 3: </h4>
+                    <select name="select-3" id="select-3" class="select">
+                        <option value=""></option>
+                        <option value="2100">2100</option>
+                        <option value="2200">2200</option>
+                        <option value="2300">2300</option>
+                        <option value="2400">2400</option>
+                    </select>
+                </div>
+                <div class="text-field">
+                    <div class="form-group">
+                        <label>Price 1</label>
+                        <input type="number" id="input-3" class="form-control price" disabled>
+                    </div>
+                </div>
+            </div>
+            
+    
+            <div class="total">
+                <h3>Total: </h3>
+                <div id="result">
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>  
+
+    <script type="text/javascript">
+        $('#select-2').on('change', function(){
+            var s2 = document.getElementById('select-2');
+            var secondInput = parseInt(s2.value);
+            $('#input-2').val(secondInput);
+        })
+        $('#select-3').on('change', function(){
+            var s3 = document.getElementById('select-3');
+            var thirdInput = parseInt(s3.value);
+            $('#input-3').val(thirdInput);
+        })
+        $('#select-1').on('change', function(){
+            var s1 = document.getElementById('select-1');
+            var firstInput = parseInt(s1.value);
+            $('#input-1').val(firstInput);
+        })
+        $('.select').on('change', function(){
+            var totalSum = 0;
+            $('.form-group .price').each(function(){
+                var inputVal = $(this).val();
+                if($.isNumeric(inputVal)){
+                    totalSum += parseFloat(inputVal);
+                }
+            })
+            $('#result').text(totalSum);
+        })
+    </script>
+</body>
+</html>
